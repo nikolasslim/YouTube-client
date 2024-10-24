@@ -1,1 +1,30 @@
-<p>search-item works!</p>
+<div class="container item">
+    <div *ngFor="let item of responseData?.items" class="search-item">
+        <div class="search-item--thumbnail">
+            <img class="search-item--thumbnail-img"
+                 [src]="item.snippet.thumbnails.default.url" alt="thumbnail">
+        </div>
+
+        <ul class="search-item--statistic">
+            <li class="search-item--statistic-item"><img class="search-item--badge" src="/viewed.svg" alt="views">
+                {{ item.statistics.viewCount }}
+            </li>
+            <li class="search-item--statistic-item"><img class="search-item--badge" src="/liked.svg" alt="likes">
+                {{ item.statistics.likeCount }}
+            </li>
+            <li class="search-item--statistic-item">
+                <img class="search-item--badge" src="/dislike.svg" alt="dislikes">
+                {{ item.statistics.dislikeCount }}
+            </li>
+            <li class="search-item--statistic-item">
+                <img class="search-item--badge" src="/comment.svg" alt="comments" height="13" width="13">
+                {{ item.statistics.commentCount }}
+            </li>
+        </ul>
+
+        <h2 class="search-item--title">{{ item.snippet.title }}</h2>
+
+        <button class="search-item--button">More</button>
+    </div>
+
+</div>

@@ -1,1 +1,42 @@
-<p>header works!</p>
+<nav class="navbar">
+    <div class="container">
+        <div class="navbar-panel">
+            <div class="navbar-center">
+                <div>
+                    <img class="navbar-logo" src="/youtubelogo.svg" alt="yt_logo">
+                </div>
+                <div class="navbar-search--input">
+                    <input type="text" placeholder="Search">
+                    <button class="search-button">Search</button>
+                    <button (click)="toggleClass()" class="settings-button" type="button">
+                        <img src="/settings.svg" alt="settings_icon">
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="navbar-profile">
+                <span class="navbar-profile--name">Your name</span>
+                <img class="navbar-profile--logo" src="/profile.svg" alt="profile_svg">
+
+            </div>
+        </div>
+
+
+        <div class="navbar-filters" [ngClass]="{'active' : isActive}">
+            <ul class="navbar-filters--list">
+                <li class="navbar-filters--item"><a href="#">Sorting by:</a></li>
+                <li class="navbar-filters--item"><a href="#">date</a></li>
+                <li class="navbar-filters--item"><a href="#">count of views</a></li>
+                <li class="navbar-filters--item">
+                    <form>
+                        <label for="search-form">by word or sentance</label>
+                        <input type="text" id="search-form" name="serch">
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
